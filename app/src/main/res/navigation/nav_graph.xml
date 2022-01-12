@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/doctorListFragment">
+
+    <fragment
+        android:id="@+id/doctorListFragment"
+        android:name="com.appisode.doctorappointmentapp.ui.doctorlist.DoctorListFragment"
+        android:label="DoctorListFragment" >
+
+        <action
+            android:id="@+id/action_doctorListFragment_to_doctorDetailFragment"
+            app:destination="@id/doctorDetailFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/doctorDetailFragment"
+        android:name="com.appisode.doctorappointmentapp.ui.doctordetail.DoctorDetailFragment"
+        android:label="DoctorDetailFragment">
+        <argument
+            android:name="userName"
+            app:argType="string" />
+        <argument
+            android:name="userStatus"
+            app:argType="string" />
+        <argument
+            android:name="userImage"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_doctorDetailFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+        <action
+            android:id="@+id/action_doctorDetailFragment_to_appointmentFragment"
+            app:destination="@id/appointmentFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/appointmentFragment"
+        android:name="com.appisode.doctorappointmentapp.ui.appointment.AppointmentFragment"
+        android:label="AppointmentFragment" />
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.appisode.doctorappointmentapp.ui.payment.PaymentFragment"
+        android:label="PaymentFragment" />
+</navigation>
